@@ -1,6 +1,8 @@
 import Form from "./components/Form";
 import DynamicInut from "./components/DynamicInut";
 
+// БЛАГОДРЯ ЗА ОТДЕЛЕНОТО ВРЕМЕ!!!
+
 const App = () => {
     // 1. тук имаме custom Form component с два custom Input
     return (

@@ -7,6 +7,7 @@ const DynamicInut = (props) => {
     const internalInputRef = useRef();
 
     const { value, onChange } = useFormInput(props);
+    // console.log(value);
 
     return (
         <Input
@@ -18,4 +19,9 @@ const DynamicInut = (props) => {
     );
 };
 
-export default DynamicInut;
+// защо се използва useMemo - ясно, да не се пререндерира част от компонента, която не е променена.
+// защо обаче слагаме propery inputRef, това не е ясно. на мен.
+// ясно е, че се ползва от useFormInput хука, не разбирам как;
+export default forwardRef((refProps, ref) =>
+    useMemo(() => <DynamicInut {...refProps} inputRef={ref} />)
+);
